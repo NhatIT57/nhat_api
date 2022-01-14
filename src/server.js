@@ -207,7 +207,6 @@ const wsServer = new webSocketServer({
     httpServer: server,
 });
 
-// This code generates unique userid for everyuser.
 const getUniqueID = () => {
     const s4 = () =>
         Math.floor((1 + Math.random()) * 0x10000)
