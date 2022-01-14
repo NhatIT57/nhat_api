@@ -76,7 +76,6 @@ const wsServer = new webSocketServer({
     httpServer: server,
 });
 
-// This code generates unique userid for everyuser.
 const getUniqueID = () => {
     const s4 = () =>
         Math.floor((1 + Math.random()) * 0x10000)
@@ -89,17 +88,6 @@ wsServer.on("request", function(request) {
     var userID = getUniqueID();
     const connection = request.accept(null, request.origin);
     clients["nhat"] = connection;
-
-    // connection.on("message", function(message) {
-    //     if (message.type === "utf8") {
-    //         console.log("Received Message: ", message.utf8Data);
-    //         // broadcasting message to all connected clients
-    //         for (key in clients) {
-    //             clients[key].sendUTF(message.utf8Data);
-    //             console.log("sent Message to: ", clients[key]);
-    //         }
-    //     }
-    // });
 });
 
 UploadRouter(app);
