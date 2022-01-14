@@ -61,6 +61,18 @@ module.exports = {
             });
         });
     },
+    getLoaiGiayTC: (req, res) => {
+        loaigiay.getLoaiGiayTC((err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
     updateLoaiGiay: (req, res) => {
         const body = req.body;
         // const salt = genSaltSync(10);

@@ -1,5 +1,4 @@
 import * as loaigiay from "./loaiGiay.service";
-import { getEmail } from "./loaiGiay.service";
 
 const { sign } = require("jsonwebtoken");
 
@@ -85,8 +84,8 @@ module.exports = {
     },
 
     getByid: (req, res) => {
-        const id = req.params.id;
-        loaigiay.getById(id, (err, results) => {
+        const body = req.body;
+        loaigiay.getById(body, (err, results) => {
             if (err) {
                 console.log(err);
                 return;
@@ -210,6 +209,7 @@ module.exports = {
                 return res.json({
                     success: 1,
                     message: "login successfully",
+                    data: results,
                     token: jsontoken,
                 });
             } else {
