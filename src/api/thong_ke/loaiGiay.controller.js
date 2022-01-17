@@ -75,4 +75,102 @@ module.exports = {
             });
         });
     },
+
+
+    getDoanhThu: (req, res) => {
+        const data = req.body;
+        loaigiay.getDoanhThu(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+
+    getDoanhThuMonth: (req, res) => {
+        const data = req.body;
+        loaigiay.getDoanhThuMonth(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+    getDoanhThuTongTien: (req, res) => {
+        const data = req.body;
+        loaigiay.getDoanhThuTongTien(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+    getDoanhThuTotal: (req, res) => {
+        const data = req.body;
+        loaigiay.getDoanhThuTotal(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+    getTonKho: (req, res) => {
+        const data = req.body;
+        loaigiay.getTonKho(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+    getTonKhoTongTien: (req, res) => {
+        loaigiay.getTonKhoTongTien((err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+    getTonKhoTotal: (req, res) => {
+        loaigiay.getTonKhoTotal((err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
 };

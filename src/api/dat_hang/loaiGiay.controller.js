@@ -94,6 +94,21 @@ module.exports = {
         });
     },
 
+
+    pageSearchByID: (req, res) => {
+        const body = req.body;
+        loaigiay.pageSearchByID(body, (err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
     getCTDonHangByID: (req, res) => {
         const body = req.body;
         loaigiay.getCTDonHangByID(body, (err, results) => {

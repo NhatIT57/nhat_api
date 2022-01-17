@@ -4,7 +4,7 @@ import * as controller from "./loaiGiay.controller";
 router.get("/", controller.getAll);
 router.post("/", controller.create);
 // router.get('/:id', controller.getLoaiGiayByid);
-router.patch("/", controller.update);
+router.post("/update", controller.update);
 router.post("/delete", controller.delete);
 router.post("/page", controller.page);
 router.post("/pageSearch", controller.pageSearch);
@@ -17,5 +17,6 @@ router.post("/getDonHangBySDT", controller.getDonHangBySDT);
 router.post("/getDonHangByEmailAll", controller.getDonHangByEmailAll);
 router.post("/getDonHangBySDTAll", controller.getDonHangBySDTAll);
 router.post("/updateStatus", controller.updateStatus);
+router.post("/pageSearchByID", controller.pageSearchByID);
 
 module.exports = router;
