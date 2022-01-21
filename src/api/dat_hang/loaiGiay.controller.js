@@ -52,6 +52,18 @@ module.exports = {
             });
         });
     },
+    getTinhThanh: (req, res) => {
+        loaigiay.getTinhThanh((err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
     update: (req, res) => {
         const body = req.body;
         loaigiay.update(body, (err, results) => {

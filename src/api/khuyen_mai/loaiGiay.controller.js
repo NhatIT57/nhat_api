@@ -70,7 +70,20 @@ module.exports = {
         });
     },
     getKhuyenMai: (req, res) => {
-        loaigiay.getKhuyenMai((err, results) => {
+        loaigiay.getKhuyenMai( (err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+    getNow: (req, res) => {
+        const body = req.body;
+        loaigiay.getNow(body, (err, results) => {
             if (err) {
                 console.log(err);
                 return;

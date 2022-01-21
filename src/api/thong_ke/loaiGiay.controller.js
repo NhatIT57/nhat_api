@@ -91,6 +91,34 @@ module.exports = {
         });
     },
 
+    getVanChuyen: (req, res) => {
+        const data = req.body;
+        loaigiay.getVanChuyen(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
+    getDoanhThuLG: (req, res) => {
+        const data = req.body;
+        loaigiay.getDoanhThuLG(data,(err, results) => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.json({
+                success: 1,
+                data: results,
+            });
+        });
+    },
+
 
     getDoanhThuMonth: (req, res) => {
         const data = req.body;

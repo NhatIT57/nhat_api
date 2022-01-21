@@ -7,6 +7,7 @@ router.post("/", controller.create);
 router.post("/update", controller.update);
 router.post("/delete", controller.delete);
 router.post("/page", controller.page);
+router.get("/getTinhThanh", controller.getTinhThanh);
 router.post("/pageSearch", controller.pageSearch);
 router.post("/get", controller.pageSearch);
 router.post("/getChiTietDonHangByID", controller.getCTDonHangByID);

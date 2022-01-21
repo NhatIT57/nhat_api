@@ -282,4 +282,16 @@ module.exports = {
             }
         );
     },
+
+    SoLuongGiay: (callBack) => {
+        pool.query(
+            `SELECT g.*, m.hinh_anh from giay as g, chi_tiet_mau_sac_size as s, chi_tiet_mau_sac as m WHERE g.id = m.id_giay and m.id = s.id_ct_mau_sac and s.so_luong < 3 and g.trang_thai = 1 GROUP BY g.id`, [],
+            (error, results, fields) => {
+                if (error) {
+                    return callBack(error);
+                }
+                return callBack(null, results);
+            }
+        );
+    },
 };

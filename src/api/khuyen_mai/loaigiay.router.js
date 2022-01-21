@@ -5,6 +5,7 @@ router.get('/', controller.getKhuyenMai);
 router.post('/', controller.create);
 router.post('/getKhuyenMaiNow', controller.getKhuyenMaiNow);
 router.post('/getSanPhamKMNow', controller.getSanPhamKMNow);
+router.post('/getNow', controller.getNow);
 router.get('/:id', controller.getById);
 router.patch('/', controller.updateKhuyenMai);
 router.post('/delete', controller.deleteKhuyenMai);

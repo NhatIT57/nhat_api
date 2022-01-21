@@ -17,6 +17,7 @@ import ctDonhang from "./api/chi_tiet_don_hang/loaigiay.router";
 import khachhang from "./api/khach_hang/loaigiay.router";
 import dathang from "./api/dat_hang/loaigiay.router";
 import thongke from "./api/thong_ke/loaigiay.router";
+import tinh_thanh_pho from './api/tinh_thanh_pho/user.router';
 const initRoutes = require('./api/xac_nhan_mail/router')
 
 
@@ -63,6 +64,7 @@ app.use("/api/chi_tiet_don_hang", ctDonhang);
 app.use("/api/khach_hang", khachhang);
 app.use("/api/dat_hang", dathang);
 app.use("/api/thong_ke", thongke);
+app.use("/api/tinh_thanh_pho", tinh_thanh_pho);
 
 router.post('/create_payment_url', function (req, res, next) {
     var ipAddr = req.headers['x-forwarded-for'] ||

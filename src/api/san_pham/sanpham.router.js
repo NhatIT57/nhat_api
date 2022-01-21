@@ -14,6 +14,7 @@ router.post("/giayLG", giay.giayLG);
 router.get("/newProduct", giay.newProduct);
 router.post("/", giay.createGiay);
 router.post("/page", giay.page);
+router.get("/SoLuongGiay", giay.SoLuongGiay);
 router.post("/pageSearch", giay.pageSearch);
 router.post("/pageSearchAll", giay.pageSearchAll);
 router.post("/pageSearchMSAll", giay.pageSearchMSAll);
